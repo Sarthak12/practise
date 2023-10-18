@@ -1,0 +1,20 @@
+name: wf1
+on: push
+jobs:
+  myJob:
+    runs-on: ubuntu-latest  
+    steps:
+      - name: get code
+        uses: actions/checkout@v3
+
+      - name: Lint the code
+        run:  eslint --ext .jsx --fix src
+
+      - name: Test the code
+        run:  vitest run
+
+      - name: Build the code
+        run:  vite build
+        
+                
+      
