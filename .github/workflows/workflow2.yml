@@ -1,0 +1,8 @@
+name: wf2
+on: issues
+jobs:
+  myJob:
+    runs-on: ubuntu-latest  
+    steps:
+      - name: event details
+        run:  echo "${{ toJSON(github.event) }}"

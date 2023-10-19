@@ -1,15 +1,15 @@
 name: wf1
-on: push
+on: [push, workflow_dispatch]
 jobs:
   myJob:
     runs-on: ubuntu-latest  
     steps:
       - name: get code
         uses: actions/checkout@v3
-      
+       
       - name: Install dependency
         run:  npm ci
-        
+
       - name: Lint the codee
         run:  npm run lint
 
